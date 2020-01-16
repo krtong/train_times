@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Train Times</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Train Times</h1>
+            <p class="lead">Trains start each day at their first train time and run each day until midnight.</p>
+        </div>
+
+        <div class="row" >
+            <div class="col-lg-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        Current Trail Schedule
+                    </div>
+
+                    <div class="card-body">
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table">
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Train Name</td>
+                                    <td>Destination</td>
+                                    <td>Frequency</td>
+                                    <td>Next Arrival</td>
+                                    <td>Minutes Away</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="card card2">
+                    <div class="card-header">
+                        Add Train
+                    </div>
+
+                    <div class="card-body">
+
+                        <form role="form">
+                            <div class="form-group row">
+                                <label for="name-input">Train Name</label>
+                                <input class="form-control" id="name-input" type="text">
+                            </div>
+                            <div class="form-group row">
+                                <label for="destination-input">Destination</label>
+                                <input class="form-control" id="destination-input" type="text">
+                            </div>
+                            <div class="form-group row">
+                                <label for="train-time-input">First Train Time (HH:mm - military time)</label>
+                                <input class="form-control" id="train-time-input" type="text">
+                            </div>
+                            <div class="form-group row">
+                                <label for="frequency-input">Frequency (min)</label>
+                                <input class="form-control" id="frequency-input" type="number">
+                            </div>
+                            <div id="warning" style="visibility: hidden;">Please enter all fields, then resubmit</div>
+                            <div id="invalid-arrival" style="display: none;">Please enter a valid arrival time - HH:mm
+                            </div>
+                            <button class="btn btn-default" id="submit" type="submit">Submit</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDO2JdLO22sWMTVMaKH-Hxn1hihtfsthQw",
+            authDomain: "traintimes-f5831.firebaseapp.com",
+            databaseURL: "https://traintimes-f5831.firebaseio.com",
+            projectId: "traintimes-f5831",
+            storageBucket: "traintimes-f5831.appspot.com",
+            messagingSenderId: "383369514257",
+            appId: "1:383369514257:web:498ad0111e7126489250b0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="htdtps://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="./assets/js/app.js" async defer></script>
+</body>
+
+</html>
